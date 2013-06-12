@@ -38,3 +38,10 @@ dot = exports.dot = (a, b) ->
       c = transpose(extractColumn(b, cp))[0]
       R[rp][cp] = sumOfPairWiseMultiply r, c
   R
+
+map = exports.map = (A, f) ->
+  M = zeros size(A)[0], size(A)[1]
+  for r in [0..A.length-1]
+    for c in [0..A[0].length-1]
+      M[r][c] = f(A[r][c])
+  M

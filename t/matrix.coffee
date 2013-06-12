@@ -29,4 +29,7 @@ t.cmp mult, [[20, 38], [47, 92]], "mult worked"
 
 t.cmp m.dot(m1, m.eye(3)), m1, 'mult by identity works'
 
+dbl = (v) -> v * 2
+t.cmp m.map(m2, dbl), [[4,10],[6,12],[8,14]], 'map works'
+
 t.done()

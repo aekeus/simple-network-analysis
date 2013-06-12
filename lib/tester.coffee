@@ -16,10 +16,6 @@ exports.cmp   = (a, b, msg) -> ok JSON.stringify(a) is JSON.stringify(b), msg
 exports.close = (a, b, msg) -> ok Math.abs(a - b) < 0.01, msg
 
 exports.done  = ->
-  if not_ok_count is 0
-    not_ok_label = not_ok_count
-  else
-    not_ok_label = red(not_ok_count)
-  console.log " #{ok_count} passed, #{not_ok_label} failed"
+  console.log " #{ok_count} passed, #{not_ok_count} failed"
 
 exports.ok = ok
