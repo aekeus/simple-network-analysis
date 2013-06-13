@@ -45,3 +45,33 @@ map = exports.map = (A, f) ->
     for c in [0..A[0].length-1]
       M[r][c] = f(A[r][c])
   M
+
+pnorm = exports.pnorm = (vec) ->
+  sum = 0
+  sum += (v*v) for v in vec
+  Math.sqrt sum
+
+pnormvec = exports.pnormvec = (vec) ->
+  pnorm (r[0] for r in vec)
+
+normalizeVector = exports.normalizeVector = (vec) ->
+  norm = pnormvec vec
+  ([r[0] / norm] for r in vec)
+
+sumOfVector = exports.sumOfVector = (vec, column=0) ->
+  sum = 0
+  sum += v[0] for v in vec
+  sum
+
+eigvecs = exports.eigvecs = (A, delta=0.00001) ->
+  rows = size(A)[0]
+  initial = ones(rows, 1)
+  initial_sum = sumOfVector initial
+  iterations = 0
+  while 1
+    iterations += 1
+    initial = normalizeVector( dot(A, initial) )
+    new_sum = sumOfVector initial
+    break if Math.abs(new_sum - initial_sum) < delta
+    initial_sum = new_sum
+  initial
