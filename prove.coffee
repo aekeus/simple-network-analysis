@@ -23,4 +23,4 @@ for f in files
         failed += parseInt matches[2]
       file_count -= 1
       console.log " #{green passed} passed, #{failed} failed (Aggregate)" if file_count is 0
-      console.log stderr if stderr?
+      console.log stderr if stderr
