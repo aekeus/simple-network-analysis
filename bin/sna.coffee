@@ -1,7 +1,11 @@
 r = require '../lib/reader.coffee'
 m = require '../lib/matrix.coffee'
 
-fn = process.argv[2]
+argv = require('optimist')
+  .demand(['file'])
+  .argv
+
+fn = argv.file
 s = r.read fn
 
 console.log s
