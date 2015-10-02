@@ -1,4 +1,5 @@
 fs = require 'fs'
+
 m = require '../lib/matrix.coffee'
 
 exports.read = (fn, encoding='utf-8') ->
@@ -8,4 +9,3 @@ exports.read = (fn, encoding='utf-8') ->
     column_headings: lines[0]
     row_headings: l[0] for l in lines[1..]
     membership: m.map (l[1..] for l in lines[1..]), parseInt
-

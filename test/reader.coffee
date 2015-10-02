@@ -1,8 +1,9 @@
 test = require('tap').test
 r = require '../lib/reader.coffee'
+path = require 'path'
 
 test "reader", (t) ->
-  s = r.read './duality.csv'
+  s = r.read path.join(__dirname, '..', 'samples', 'duality.csv')
 
   expected =
     column_headings: [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14' ]

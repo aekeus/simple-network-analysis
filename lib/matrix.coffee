@@ -48,7 +48,7 @@ map = exports.map = (A, f) ->
 
 pnorm = exports.pnorm = (vec) ->
   sum = 0
-  sum += (v*v) for v in vec
+  sum += (v * v) for v in vec
   Math.sqrt sum
 
 pnormvec = exports.pnormvec = (vec) ->
