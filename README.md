@@ -2,7 +2,7 @@ Simple network analysis based on http://www.rci.rutgers.edu/~pmclean/mcleanp_01_
 
 To run:
 
-`coffee bin/sna.coffee --file=../samples/duality.csv`
+`coffee bin/sna.coffee --file=./samples/duality.csv`
 
 References:
 
